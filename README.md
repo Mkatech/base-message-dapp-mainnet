@@ -69,3 +69,4 @@ git push -u origin main
 ```
 
 Replace `<your-username>` and `<your-repo>` with your actual GitHub username and repository name.
+# Guild verification update
