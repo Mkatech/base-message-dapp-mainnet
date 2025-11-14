@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Base Message Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.0/dist/ethers.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #020617;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: #020817;
+      border-radius: 16px;
+      padding: 24px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 20px 40px rgba(15,23,42,0.7);
+      border: 1px solid #1e293b;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    button {
+      background: #3b82f6;
+      color: #e2e8f0;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    button:disabled {
+      background: #334155;
+      cursor: not-allowed;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      background: #020617;
+      color: #e2e8f0;
+    }
+    .msg {
+      background: #020617;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      font-size: 0.9rem;
+    }
+    .small {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Base Message Board 🟦</h1>
+    <p class="small">A simple dApp on Base. Connect your wallet, post a message, and read messages stored on-chain.</p>
+
+    <button id="connectBtn">Connect Wallet</button>
+    <p class="status" id="networkStatus"></p>
+
+    <hr style="border-color:#1e293b; margin:16px 0;" />
+
+    <label for="messageInput">Write a message:</label>
+    <input id="messageInput" type="text" placeholder="Hello Base!" />
+    <button id="sendBtn" style="margin-top:8px;" disabled>Send Message</button>
+
+    <div class="status" id="txStatus"></div>
+
+    <h3 style="margin-top:18px;">Messages</h3>
+    <div id="messages"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
